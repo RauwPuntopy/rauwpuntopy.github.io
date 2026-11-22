@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1C1611">
+  <meta name="color-scheme" content="dark">
+  <title>Te invitan a Folium</title>
+  <link rel="icon" href="../hoja.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Handlee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="invite.css">
+  <script type="module" src="invite.js"></script>
+</head>
+<body>
+  <main class="page">
+    <!-- The lamp: cord, shade, bulb and its cone of amber light -->
+    <div class="lamp" aria-hidden="true">
+      <svg class="lamp-light" viewBox="0 0 390 420" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="cone" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#E9A84C" stop-opacity="0.26"/>
+            <stop offset="0.55" stop-color="#E9A84C" stop-opacity="0.07"/>
+            <stop offset="1" stop-color="#E9A84C" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path d="M160 64 L230 64 L330 420 L60 420 Z" fill="url(#cone)"/>
+      </svg>
+      <svg class="lamp-fixture" viewBox="0 0 390 80">
+        <line x1="195" y1="0" x2="195" y2="40" stroke="#5C4733" stroke-width="1.5"/>
+        <path d="M175 40 L215 40 L232 64 L158 64 Z" fill="#3D2D1E" stroke="#8A6A3E" stroke-width="1.5" stroke-linejoin="round"/>
+        <path d="M181 64 L209 64 A14 10 0 0 1 181 64 Z" fill="#F2C079"/>
+      </svg>
+    </div>
+
+    <img class="leaf" src="../hoja.svg" width="62" height="62" alt="">
+
+    <h1 class="title" id="title">Te invitan a Folium</h1>
+    <p class="lead">Tus libros, en un solo estante. Al conectarse, cada quien ve los Favoritos y la Lista de deseos del otro.</p>
+
+    <section class="code-card" id="code-card">
+      <p class="code-label">Su código de invitación</p>
+      <p class="code" id="code"></p>
+      <button class="copy" id="copy" type="button">
+        <svg class="copy-icon" viewBox="0 0 20 20" aria-hidden="true">
+          <rect x="7" y="7" width="10" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M13 4.5 A2 2 0 0 0 11 3 H5 A2 2 0 0 0 3 5 V11 A2 2 0 0 0 4.5 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <span id="copy-label" aria-live="polite">Copiar código</span>
+      </button>
+    </section>
+
+    <p class="broken-link" id="broken-link" hidden>Este enlace está incompleto. Pídele a quien te invitó que te lo mande otra vez.</p>
+
+    <ol class="steps">
+      <li><span class="step-number" aria-hidden="true">1</span>Copia el código.</li>
+      <li><span class="step-number" aria-hidden="true">2</span>Instala Folium y entra con tu correo.</li>
+      <li><span class="step-number" aria-hidden="true">3</span>Pégalo en «¿Alguien te invitó?».</li>
+    </ol>
+
+    <a class="open-app" id="open-app">Abrir en Folium</a>
+
+    <div class="install">
+      <a class="install-button is-soon" id="install-android" aria-disabled="true">
+        <span class="install-label" data-install-label>Pronto</span>
+        <span class="install-name">Android</span>
+      </a>
+      <a class="install-button is-soon" id="install-iphone" aria-disabled="true">
+        <span class="install-label" data-install-label>Pronto</span>
+        <span class="install-name">iPhone</span>
+      </a>
+    </div>
+
+    <p class="footer" id="footer"></p>
+  </main>
+</body>
+</html>

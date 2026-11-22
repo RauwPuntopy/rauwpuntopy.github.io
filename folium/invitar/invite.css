@@ -1,0 +1,267 @@
+/* Folium invite page. Colors and type from docs/folium-contexto.md ("Diseño")
+   and the "página de invitación" screen of the canvas. */
+:root {
+  --walnut: #1C1611;
+  --walnut-deep: #120E0B;
+  --amber: #E9A84C;
+  --amber-bulb: #F2C079;
+  --cream: #F3E7D3;
+  --cream-muted: #BFAE94;
+  --footer: #8C7B66;
+  --card: #261D16;
+  --card-border: #8A6A3E;
+  --step: #3C2D17;
+  --install: #0F0B08;
+  --install-border: #4A3D30;
+  --on-amber: #2A1F15;
+  --title-font: 'Amatic SC', 'Arial Narrow', 'Avenir Next Condensed', 'Roboto Condensed', sans-serif;
+  --text-font: 'Handlee', 'Bradley Hand', 'Segoe Print', 'Chalkboard SE', 'Comic Sans MS', cursive;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--walnut);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--cream);
+  font-family: var(--text-font);
+  /* Night walnut with the amber lamp glow on top */
+  background-color: var(--walnut);
+  background-image: radial-gradient(ellipse 120% 520px at 50% 0%, #4A3720 0%, #2A2016 38%, var(--walnut) 72%);
+  background-repeat: no-repeat;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.page {
+  position: relative;
+  max-width: 390px;
+  margin: 0 auto;
+  /* Top padding (not the leaf's margin) leaves room for the lamp:
+     a margin would collapse through .page and push the lamp down with it. */
+  padding: 132px 26px calc(32px + env(safe-area-inset-bottom));
+  text-align: center;
+  isolation: isolate;
+}
+
+/* ---- Lamp ---- */
+.lamp {
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 420px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.lamp-light {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lamp-fixture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+}
+
+/* ---- Leaf + title ---- */
+.leaf {
+  display: block;
+  margin: 0 auto;
+  width: 62px;
+  height: 62px;
+}
+
+.title {
+  margin: 14px 0 0;
+  font-family: var(--title-font);
+  font-weight: 700;
+  font-size: 46px;
+  line-height: 48px;
+  letter-spacing: 0.5px;
+  color: var(--cream);
+  overflow-wrap: anywhere;
+}
+
+.lead {
+  margin: 12px auto 0;
+  max-width: 300px;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--cream-muted);
+}
+
+/* ---- Code card ---- */
+.code-card {
+  margin-top: 28px;
+  padding: 24px 16px 22px;
+  border: 1px dashed var(--card-border);
+  border-radius: 20px;
+  background-color: var(--card);
+}
+
+.code-label {
+  margin: 0;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--cream-muted);
+}
+
+.code {
+  margin: 10px 0 0;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: 6px;
+  color: var(--amber);
+  white-space: nowrap;
+}
+
+.copy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 150px;
+  height: 44px;
+  margin-top: 14px;
+  padding: 0 22px;
+  border: 1px solid var(--amber);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--amber);
+  font-family: var(--text-font);
+  font-size: 15px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.copy:focus-visible,
+.open-app:focus-visible,
+.install-button:focus-visible {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+}
+
+.copy-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.broken-link {
+  margin: 28px 0 0;
+  font-size: 16px;
+  line-height: 25px;
+  color: var(--cream);
+}
+
+/* ---- Steps ---- */
+.steps {
+  margin: 26px 0 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 26px;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--cream);
+}
+
+.steps li + li {
+  margin-top: 8px;
+}
+
+.step-number {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: var(--step);
+  color: var(--amber);
+  font-size: 13px;
+}
+
+/* ---- Open in Folium (amber button) ---- */
+.open-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 54px;
+  margin-top: 28px;
+  border-radius: 999px;
+  background-color: var(--amber);
+  color: var(--on-amber);
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: 0 6px 26px rgba(233, 168, 76, 0.28);
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---- Install buttons ---- */
+.install {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.install-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  border: 1px solid var(--install-border);
+  border-radius: 14px;
+  background-color: var(--install);
+  color: var(--cream);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.install-button.is-soon {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.install-label {
+  font-size: 11px;
+  line-height: 14px;
+  color: var(--cream-muted);
+}
+
+.install-name {
+  font-size: 19px;
+  line-height: 24px;
+}
+
+/* ---- Footer ---- */
+.footer {
+  margin: 14px 0 0;
+  font-size: 12.5px;
+  line-height: 19px;
+  color: var(--footer);
+}
