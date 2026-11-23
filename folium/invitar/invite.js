@@ -2,10 +2,9 @@
 // Reads `c` and `n` from the URL only (never calls Supabase).
 // The inviter's name comes from the URL: it is always written with textContent.
 
-// Install links. Fill them in when the first installable builds exist.
-// While one is empty, its button shows "Pronto", dimmed and without a link.
+// Install link (Android only for now). Fill it in when the first APK exists.
+// While it is empty, its button shows "Pronto", dimmed and without a link.
 export const ANDROID_URL = ''; // APK from EAS
-export const IPHONE_URL = ''; // TestFlight invite link
 
 export const INVITE_ALPHABET = '23456789ABCDEFGHJKMNPQRSTUVWXYZ';
 export const MAX_NAME_LENGTH = 40; // same as profiles.display_name
@@ -140,7 +139,6 @@ export function renderInvite(doc, search) {
   }
 
   renderInstall($('install-android'), ANDROID_URL);
-  renderInstall($('install-iphone'), IPHONE_URL);
 }
 
 if (typeof document !== 'undefined') {

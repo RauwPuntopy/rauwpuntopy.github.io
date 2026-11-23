@@ -220,11 +220,10 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* ---- Install buttons ---- */
+/* ---- Install button (Android only for now: full width, like "Abrir en Folium") ---- */
 .install {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  grid-template-columns: 1fr;
   margin-top: 16px;
 }
 
