@@ -2,9 +2,10 @@
 // Reads `c` and `n` from the URL only (never calls Supabase).
 // The inviter's name comes from the URL: it is always written with textContent.
 
-// Install link (Android only for now). Fill it in when the first APK exists.
-// While it is empty, its button shows "Pronto", dimmed and without a link.
-export const ANDROID_URL = ''; // APK from EAS
+// Install link (Android only for now). While it is empty, its button shows "Pronto", dimmed and
+// without a link. It points at the newest GitHub Release of the public repo, whose asset is always
+// named folium.apk, so it never expires (EAS build links do) and always serves the latest APK.
+export const ANDROID_URL = 'https://github.com/rauwpuntopy/rauwpuntopy.github.io/releases/latest/download/folium.apk';
 
 export const INVITE_ALPHABET = '23456789ABCDEFGHJKMNPQRSTUVWXYZ';
 export const MAX_NAME_LENGTH = 40; // same as profiles.display_name
